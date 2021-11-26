@@ -185,6 +185,7 @@ ul.nav li:hover a{color:white;}
 .sliding .image{
     padding:5%;
     background-blend-mode: overlay;
+    background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
     margin-bottom: 5%; 
