@@ -14,7 +14,7 @@ function fetchA() {
         })
         .then(function(res) {
             loadAll(res);
-        }).then(slider);
+        }).then(slider).then(addTopRated);
     }
 
     fetchA();
@@ -87,3 +87,28 @@ num = num - windowVariable;
 if (num < 0) { num = dogs.length - windowVariable - 1; }
 showSlides(num);
 }
+
+
+var row = document.getElementsByClassName("row")[0];
+var j;
+
+function addTopRated() {
+    for (j = 0; j < 6; j++) {
+        const articleWrapper = document.createElement("article");
+        articleWrapper.innerHTML += "<div class=\"img\">" +
+            "<span>" +"  " + "</span><h3>" + arr[j].name + "</h3></div>";
+        articleWrapper.childNodes[0].style.backgroundImage = "url(" + arr[j].image.url + ")";
+        articleWrapper.innerHTML += "<div class=\"lower\">" +
+        "<a href=" + arr[j].image.url +
+        "<span class=\"description\">" + arr[j].bred_for  + "</span>" +
+        "</div>";
+     row.appendChild(articleWrapper);
+    }
+    
+}
+
+
+
+
+
+
