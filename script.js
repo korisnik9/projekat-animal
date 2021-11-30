@@ -10,11 +10,13 @@ function fetchA() {
             return response.json();
         })
         .then(function(res) {
+            for (i = 0; i < res.length; i++) {
+            }
             return res;
         })
         .then(function(res) {
             loadAll(res);
-        }).then(slider).then(addTopRated);
+        }).then(slider).then(addTopRated).then(showBest);
     }
 
     fetchA();
@@ -38,16 +40,21 @@ function slider() {
         animal.innerHTML += "<div class=\"image\">" + "<h2>" + e.name + "</h2></div>";
         animal.childNodes[1].style.backgroundImage = "url(" + e.image.url + ")"; console.log(e.image.url)
         
+        animal.innerHTML += "<a class=\"readMore\" href=\"#\">read more</a>";
         animalsParent.appendChild(animal);
-        
+        animal.style.display = "none";
     }
+    var readMore = document.getElementsByClassName("readMore");
+         for (var y = 0; y < readMore.length; y++) {
+        readMore[y].addEventListener("click", showModalWindow);
+         }
     showSlides(0);
 }
 
 function w() {
-    if (window.innerWidth < 650) {
+    if (window.innerWidth < 550) {
         return 1;
-    } else if (window.innerWidth > 650 && window.innerWidth < 960) {
+    } else if (window.innerWidth > 550 && window.innerWidth < 960) {
         return 2;
     } else if (window.innerWidth > 960) {
         return 3;
@@ -88,23 +95,92 @@ if (num < 0) { num = dogs.length - windowVariable - 1; }
 showSlides(num);
 }
 
-
 var row = document.getElementsByClassName("row")[0];
 var j;
 
 function addTopRated() {
     for (j = 0; j < 6; j++) {
-        const articleWrapper = document.createElement("article");
-        articleWrapper.innerHTML += "<div class=\"img\">" +
-            "<span>" +"  " + "</span><h3>" + arr[j].name + "</h3></div>";
-        articleWrapper.childNodes[0].style.backgroundImage = "url(" + arr[j].image.url + ")";
-        articleWrapper.innerHTML += "<div class=\"lower\">" +
-        "<a href=" + arr[j].image.url +
+        const article = document.createElement("article");
+        article.innerHTML += "<div class=\"img\">" +
+            "<span>" +"  " + "</span><h5>" + arr[j].name + "</h5></div>";
+            article.childNodes[0].style.backgroundImage = "url(" + arr[j].image.url + ")";
+            article.innerHTML += "<div class=\"lower\">" +
         "<span class=\"description\">" + arr[j].bred_for  + "</span>" +
         "</div>";
-     row.appendChild(articleWrapper);
+        
+        row.appendChild(article);
+    }
+}
+    const featured = document.getElementsByClassName("featured")[0];
+
+function showBest() {
+    for (var i = 0; i < 3; i++) {
+        var n = i + 1;
+        const article = document.createElement("article");
+        article.innerHTML += "<div class=\"image\">" +
+            "<div class=\"numbering\">" + String(n) + "</div></div>";
+            article.childNodes[0].style.backgroundImage = "url(" + arr[i].image.url + ")";
+            article.innerHTML += "<a>" + arr[i].name + "</a>";
+        featured.appendChild(article);
     }
     
+}
+
+featured.addEventListener("click", showModalWindow);
+
+row.addEventListener("click", showModalWindow);
+
+function showModalWindow(e) {
+    modalm = document.getElementsByClassName("bestm")[0];
+    if (event.target.parentNode.tagName == "ARTICLE" && event.target.classList.contains("image")) {
+        current = e.target;
+        currentName = e.target.parentNode.children[1].innerText;
+        modalm.style.display = "grid";
+    } else if (event.target.classList.contains("readMore")) {
+        currentName = e.target.parentNode.children[1].childNodes[0].innerText;
+        modalm.style.display = "none";
+    } else if (event.target.parentNode.tagName == "ARTICLE" && event.target.classList.contains("img")) {
+        currentName = e.target.children[1].innerText;
+        modalm.style.display = "none";
+    }
+    for (el of arr) {
+        if (el.name === currentName) {
+            var myel = el;
+        }
+    }
+    modalWindowWrapper = document.getElementsByClassName("modal")[0];
+    modalWindow = document.getElementsByClassName("modalWindow")[0];
+    
+    modalWindow.children[1].style.backgroundImage = "url(" + myel.image.url + ")";
+    holder = document.getElementsByClassName("holder")[0];
+  
+    holder.children["bread"].innerText = "Bread for: " + myel.bred_for;
+    holder.children["name"].innerText = "Name: " + myel.name;
+    holder.children["temp"].innerText = "Temperament: " + myel.temperament;
+    holder.children["origin"].innerText = "Origin: " + myel.origin;
+    holder.children["weight"].innerText = "Weight: " + myel.weight.metric + " kg";
+    holder.children["height"].innerText = "Height: " + myel.height.metric + " cm";
+    holder.children["group"].innerText = "Breed group: " + myel.breed_group;
+    holder.children["life"].innerText = "Life span: " + myel.life_span;
+    
+    modalWindowWrapper.style.display = "flex";
+    document.body.style.height = "100vh";
+    document.body.style.position = "fixed";
+
+    var exit = document.getElementsByClassName("exit")[0];
+    exit.addEventListener("click", hideModalWindow);
+}
+
+function hideModalWindow(e) {
+    modalWindowWrapper = e.target.parentNode.parentNode;
+    modalWindowWrapper.style.display = "none";
+    document.body.style.height = "auto";
+    document.body.style.overflowY = "auto";
+    document.body.style.position = "relative";
+    window.scrollTo({
+        top: currentposition - 300,
+        behavoir: "smooth"
+    });
 }
 
 
