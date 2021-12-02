@@ -184,6 +184,33 @@ function hideModalWindow(e) {
 }
 
 
+var loadMoreButton = document.getElementsByClassName("loadMore")[0];
+loadMoreButton.addEventListener("click", loadMore);
+
+function loadMore(e) {
+    for (k = j; k < j + 3; k++) {
+        const article = document.createElement("article");
+        article.innerHTML += "<div class=\"img\">" +
+            "<span>" + " " + "</span><h5>" +arr[k].name + "</h5></div>";
+            article.childNodes[0].style.backgroundImage = "url(" + arr[k].image.url + ")";
+            article.innerHTML += "<div class=\"lower\">" +
+            "<span class=\"description\">" + arr[k].bred_for + "</span>" +
+            "</div>";
+        row.appendChild(article);
+        if (k == arr.length - 1) {
+            j = 0;
+            loadMoreButton.removeEventListener("click", loadMore);
+            loadMoreButton.style.display = "none";
+            break;
+        }
+    }
+    j = j + 3;
+    var loadPosition = e.pageY
+    window.scrollTo({
+        top: loadPosition - 120,
+        behavoir: "smooth"
+    });
+}
 
 
 
