@@ -205,9 +205,6 @@ ul.nav li:hover a{color:white;}
     align-items: center;
 }
 
-.slider1 .image{background-image: url("");}
-.slider2 .image{background-image: url("");}
-.slider3 .image{background-image: url("");}
 
 .sliding p, a{
     color: var(--grayText);
@@ -278,9 +275,7 @@ aside [class*="numbering"]{
     transition: all 0.5s ease;
 }
 
-.image1{background-image: url("");}
-.image2{background-image: url("");}
-.image3{background-image: url("");}
+
 
 .best a{font-weight: 100;color: white;}
 .best a:hover{text-decoration: underline;}
@@ -344,10 +339,6 @@ aside [class*="numbering"]{
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.img1{background-image: url();}
-.img2{background-image: url();}
-.img3{background-image: url();}
-
 
 .lower a{margin: 5% 0;}
 .lower{
@@ -383,14 +374,6 @@ footer{
     margin-top:200px;
 }
 
-footer svg[class="arrow"]{
-    width:100%;
-    height: 50px;
-    background-color: var(--blue);
-}
-
-footer svg[class="arrow"] path{fill:white}
-
 .footernav{
     list-style-type: none;
     display: flex;
@@ -420,8 +403,6 @@ footer > div h1{
     display: flex;
     flex-direction: column;
 }
-
-.footersvg{display:none}
 
 footer .containerwidth{
     margin: 2em auto 0 auto;
@@ -793,9 +774,397 @@ footer svg[class="arrow"]{height: 150px;}
 }
 
 
-
-
-
-
 }
 
+
+
+/* Contact desktop */
+
+main{
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo{
+    font-family: 'Dancing Script', cursive;
+    color: #ffff;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    margin-left: 5%;
+    text-decoration: none;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #56534C;
+    height: 6vw;
+    opacity: .8;
+  }
+  
+  .nav-links{
+    display: flex;
+    width: 100%;
+  }
+  .nav-links ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .nav-links li{
+    list-style-type: none;
+  }
+  .nav-links a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Alegreya', serif;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: .5rem 1rem;
+    display: block;
+  
+  }
+  .nav-links a:hover{
+    background-color: rgba(201, 201, 2, 0.623);
+  }
+  .toggle_button{
+    position: absolute;
+    display: none;
+    top: 1.4rem;
+    right: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width:1.9rem;
+    height: 1.3rem;
+  }
+  .toggle_button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 10px;
+  }
+  .icons{
+    display: flex;
+    margin-right: 10%;
+   
+  }
+  .icons >a> i{
+    color: #fff;
+    padding: 0 1rem;
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+   
+  }
+  .icons > a{
+    text-decoration: none;
+  }
+  
+  input,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+  
+  .form-wrapper {
+    width: 500px;
+    padding: 25px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px -35px rgba(0, 0, 0, 0.4);
+  }
+  
+  .form-wrapper h2 {
+    margin-bottom: 25px;
+    color: #212529;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .form-wrapper .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #212529;
+    text-transform: capitalize;
+  }
+  
+  .form-group .form-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #cccccc;
+    outline: none;
+  }
+  
+  .form-group textarea {
+    height: 100px !important;
+    resize: none;
+  }
+  
+  .submit-btn {
+    display: block;
+    width: 100%;
+    margin: 30px 0;
+    padding: 12px 40px;
+    color: #ffffff;
+    background-color: seagreen;
+    background-size: 200%;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-position: 100%;
+  }
+  
+  .star {
+    color: #fd0000;
+    font-size: 18px;
+  }
+  
+  .optional {
+    color: #707070;
+    font-size: 14px;
+  }
+  .navbarbottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    height: 11vw;
+    opacity: .8;
+    border-color: black;
+    /* border-top: 3px solid black; */
+    border-bottom: 20px;
+    border-bottom-width: thin;
+    
+  }
+  
+  .navlinks{
+    display: flex;
+    width: 100%;
+    
+    
+  }
+  .navlinks > ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgb(145, 137, 137);
+    border-bottom: 1px solid rgb(145, 137, 137);
+    
+  }
+  
+  
+  
+  .navlinks ul > li{
+    list-style-type: none;
+  }
+  .navlinks ul >li >a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Alegreya', serif;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin: .5rem 1rem;
+    display: block;
+  
+  }
+  .navlinks > ul >li > a:hover{
+    background-color: rgba(201, 201, 2, 0.623);
+  }
+  
+  
+   .log {
+    font-family: 'Dancing Script', cursive;
+    color: #ffff;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    margin-left: 5%;
+    text-decoration: none;
+  
+  }
+
+/* Phones */
+  
+  @media screen and (max-width:480px) {
+    header{
+      min-height: 15vw;
+  }
+  .logo{
+      margin-top: 8px;
+  }
+  .navbar{
+      height: 18vw;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .toggle_button{
+      display: flex;
+  }
+  .nav-links{
+      display: none;
+      width: 100%;
+  }
+  .nav-links ul{
+      width: 100%;
+      flex-direction: column;   
+      margin-top: 10px;
+  }
+  .nav-links li a{
+      padding: .3rem 1rem; 
+  }
+  .nav-links li{
+      text-align: center;
+  }
+  .nav-links.active{
+      display: flex;
+      top: 0;
+      height: 50vw;
+      background-color: #56534C;
+  }
+  .icons{
+    display: none;
+  }
+  .navbarbottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .navlinks{
+    display: flex;
+    flex-direction: column;
+  }
+  .navlinks > ul{
+    display: flex;
+  }
+  .navlinks .log{
+    display: flex;
+    justify-content: center;
+  }
+  .navlinks > ul > li >a{
+    font-size: 1rem;
+  }
+  
+  }
+
+
+  @media screen and (min-width:480px) and (max-width:780px)  {
+    header{
+      min-height: 12vw;
+  }
+  .navbar{
+      height: 12vw;
+      width: 100%;
+  }
+  .nav-links li a{
+      font-size: 1.3rem;
+      margin-right: 5px;
+  }
+  .nav-links{
+      width: 100%;
+  }
+  .icons{
+      display: none;
+  }
+  .navbarbottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .navlinks{
+    display: flex;
+    flex-direction: column;
+  }
+  .navlinks > ul{
+    display: flex;
+  }
+  .navlinks .log{
+    display: flex;
+    justify-content: center;
+  }
+  .navlinks > ul > li >a{
+    font-size: 1rem;
+  }
+  }
+
+
+
+  @media (max-width: 950px) {
+    .container{
+      width: 90%;
+      padding: 30px 40px 40px 35px ;
+    }
+    .container .content .right-side{
+     width: 75%;
+     margin-left: 55px;
+  }
+  }
+  @media (max-width: 820px) {
+    .container{
+      margin: 40px 0;
+      height: 100%;
+      margin-top: 2%;
+    }
+    .container .content{
+      flex-direction: column-reverse;
+    }
+   .container .content .left-side{
+     width: 100%;
+     flex-direction: row;
+     margin-top: 40px;
+     justify-content: center;
+     flex-wrap: wrap;
+   }
+   .container .content .left-side::before{
+     display: none;
+   }
+   .container .content .right-side{
+     width: 100%;
+     margin-left: 0;
+   }
+  }
+  @media screen and (min-width:768px) and (max-width:1150px){
+    .navbarbottom{
+      display: flex;
+      flex-direction: column;
+      margin-top: 5%;
+    }
+    .navlinks{
+      display: flex;
+      flex-direction: column;
+    }
+    .navlinks > ul{
+      display: flex;
+    }
+    .navlinks .log{
+      display: flex;
+      justify-content: center;
+    }
+    .navlinks > ul > li >a{
+      font-size: 1rem;
+    }
+  }
+  
