@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="modalwindow">
+        <div id="exit">+</div>
+    </div>
+
+    <div class="container">
+
+        <div class="add-product">
+            <form id="forma">
+                <div>
+                    <label>Product name:</label>
+                    <input type="text" id="productname" placeholder="Casio Watch" />
+                </div>
+
+                <div>
+                    <label>Product description:</label>
+                    <textarea id="productdescription" placeholder="Sample description..."></textarea>
+                </div>
+
+                <div>
+                    <label>Product image:</label>
+                    <input type="text" id="productimage" placeholder="http://...jpg" />
+                </div>
+
+                <div>
+                    <label>Product price:</label>
+                    <input type="number" id="productprice" min="0" placeholder="70.50" />
+                </div>
+
+                <button id="addbutton">Add</button>
+            </form>
+        </div>
+
+
+        <div class="list-products">
+        </div>
+
+        <div class="shopping-cart">
+            <div class="shopping-cart-products">
+            </div>
+            <div class="shopping-cart-summary">
+                <div>Total: <b>$ <span id="total">0</span></b></div>
+                <div><button id="purchase">Purchase</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

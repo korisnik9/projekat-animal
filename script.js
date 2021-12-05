@@ -10,9 +10,9 @@ function fetchA() {
             return response.json();
         })
         .then(function(res) {
-            for (i = 0; i < res.length; i++) {
-            }
-            return res;
+            // for (i = 0; i < res.length; i++) {
+            // }
+            // return res;
         })
         .then(function(res) {
             loadAll(res);
@@ -132,11 +132,11 @@ row.addEventListener("click", showModalWindow);
 
 function showModalWindow(e) {
     modalm = document.getElementsByClassName("bestm")[0];
-    if (event.target.parentNode.tagName == "ARTICLE" && event.target.classList.contains("image")) {
+    if (e.target.parentNode.tagName == "ARTICLE" && e.target.classList.contains("image")) {
         current = e.target;
         currentName = e.target.parentNode.children[1].innerText;
         modalm.style.display = "grid";
-    } else if (event.target.classList.contains("readMore")) {
+    } else if (e.target.classList.contains("readMore")) {
         currentName = e.target.parentNode.children[1].childNodes[0].innerText;
         modalm.style.display = "none";
     } else if (event.target.parentNode.tagName == "ARTICLE" && event.target.classList.contains("img")) {
